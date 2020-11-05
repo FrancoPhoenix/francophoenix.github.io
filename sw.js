@@ -26,20 +26,20 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-dca9cb0f9cabf2931ed4.js"
+    "url": "webpack-runtime-b5518d9c26562b7bc841.js"
   },
   {
     "url": "framework-06f646d936b841f99ebd.js"
   },
   {
-    "url": "app-aa246bc9eafd51e5812f.js"
+    "url": "app-ccc5c652501f7ceac911.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-23a7fd7af64eca5676b2.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "aa7ccf0cada3abda8cbab8077dd6d1b1"
+    "revision": "9c854023abc8f2465d30ce2fa02677e1"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -47,7 +47,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "6dae0aae0bfc46d0b24ff26f64cc4ebc"
+    "revision": "3e054951f9a6d1c78d16709b897b7308"
   },
   {
     "url": "polyfill-392310f31b82912380e3.js"
@@ -58,7 +58,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "042ed916f26a9940d96fa45d9c90f571"
+    "revision": "3ada7c25fab3c7a23f230d6ab08e2005"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -77,12 +77,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/docs`), ``)
+  pathname = pathname.replace(new RegExp(`^/francophoenix.github.io`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/docs/app-aa246bc9eafd51e5812f.js`))) {
+  if (!resources || !(await caches.match(`/francophoenix.github.io/app-ccc5c652501f7ceac911.js`))) {
     return await fetch(event.request)
   }
 
@@ -95,7 +95,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/docs/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/francophoenix.github.io/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
