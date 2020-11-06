@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "cara",
-  "description": "Playful and Colorful One-Page portfolio featuring Parallax effects and animations",
+  "name": "francophoenix.github.io",
+  "description": "My personal website",
   "version": "0.2.7",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "FrancoPhoenix",
   "license": "0BSD",
   "starter-name": "gatsby-starter-portfolio-cara",
   "scripts": {
